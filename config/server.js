@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import {dbConnection} from './mongo.js';
 import limiter from '../src/middleware/valid-num-reqs.js';
+import authRoutes from '../src/auth/auth.routes.js';
 
 const middlewares = (app)=>{
     app.use(express.urlencoded({extended:false}));
@@ -17,7 +18,7 @@ const middlewares = (app)=>{
 }
 
 const routes = (app) =>{
-
+    app.use('/interferMS/v1/auth', authRoutes)
 }
 
 const conectarDB = async()=>{
@@ -37,6 +38,7 @@ export const initServer= async()=>{
     try {
         middlewares(app);
         conectarDB();
+        routes(app);
         app.listen(port);
         console.log(`Server running on port ${port}`)
     } catch (e) {
