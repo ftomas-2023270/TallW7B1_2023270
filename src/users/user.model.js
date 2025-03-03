@@ -6,6 +6,11 @@ const Usuario = Schema({
         required: [true, 'Must need a name'],
         minlengh: [3,'Must have more than 3 characters']
     },
+    username: {
+        type: String,
+        required: [true, 'Must need a username'],
+        minlengh: [3,'Must have more than 3 characters']
+    },
     email: {
         type: String,
         required: [true, 'Must need an email'],
@@ -16,9 +21,13 @@ const Usuario = Schema({
         required: [true, 'Must need a password'],
         minlengh: [3,'Must have more than 3 characters']
     },
+    status: {
+        type: Boolean,
+        default: true
+    }
 })
 
-User.methods.toJSON = function(){
+Usuario.methods.toJSON = function(){
     const {__v, password, _id, ...usuario}=this.toObject();
     usuario.uid = _id;
     return usuario;

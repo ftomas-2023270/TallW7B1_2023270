@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "35f90009-429b-4851-a9cf-ce9a9952c05f",
+		"name": "client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37413957"
+	},
+	"item": [
+		{
+			"name": "addClient",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\":\"Jorge Rivera\",\n  \"email\":\"jorgeRiv@gmail.com\",\n  \"phone\":\"14253698\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3006/interferMS/v1/client"
+			},
+			"response": []
+		},
+		{
+			"name": "updateClient",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YmM1M2FhODBiZTIwNmQyNGYwZTIiLCJpYXQiOjE3NDEwMTIxOTUsImV4cCI6MTc0MTAxNTc5NX0.GGFSo_dimHLuPiF3HK0xPEVEfZ11bVnkOb2PpWZ5c0o"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"phone\":\"11112222\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3006/interferMS/v1/client/67c5c22bc630deeb430084bd"
+			},
+			"response": []
+		},
+		{
+			"name": "getClients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3006/interferMS/v1/client"
+			},
+			"response": []
+		},
+		{
+			"name": "getClientById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:3006/interferMS/v1/client/67c5c211c630deeb430084ba"
+			},
+			"response": []
+		},
+		{
+			"name": "getClientsDoc",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YmM1M2FhODBiZTIwNmQyNGYwZTIiLCJpYXQiOjE3NDEwMTIxOTUsImV4cCI6MTc0MTAxNTc5NX0.GGFSo_dimHLuPiF3HK0xPEVEfZ11bVnkOb2PpWZ5c0o"
+					}
+				],
+				"url": "http://localhost:3006/interferMS/v1/client/doc"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YmM1M2FhODBiZTIwNmQyNGYwZTIiLCJpYXQiOjE3NDEwMTIxOTUsImV4cCI6MTc0MTAxNTc5NX0.GGFSo_dimHLuPiF3HK0xPEVEfZ11bVnkOb2PpWZ5c0o"
+					}
+				],
+				"url": "http://localhost:3006/interferMS/v1/client/67c5c211c630deeb430084ba"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { login,registe } from "./auth.controller.js";
+import { login,register } from "./auth.controller.js";
 import { registerValidator,loginValidator} from "../middleware/validator.js";
 
 const router = new Router();
@@ -12,7 +12,6 @@ router.post(
 
 router.post(
     '/register',
-    uploadProfilePicture.single("profilePicture"),
     registerValidator,
     register
 )

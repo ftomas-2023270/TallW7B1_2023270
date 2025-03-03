@@ -7,6 +7,8 @@ import morgan from 'morgan';
 import {dbConnection} from './mongo.js';
 import limiter from '../src/middleware/valid-num-reqs.js';
 import authRoutes from '../src/auth/auth.routes.js';
+import clientRoutes from '../src/client/client.routes.js';
+
 
 const middlewares = (app)=>{
     app.use(express.urlencoded({extended:false}));
@@ -18,7 +20,8 @@ const middlewares = (app)=>{
 }
 
 const routes = (app) =>{
-    app.use('/interferMS/v1/auth', authRoutes)
+    app.use('/interferMS/v1/auth', authRoutes),
+    app.use('/interferMS/v1/client', clientRoutes)
 }
 
 const conectarDB = async()=>{

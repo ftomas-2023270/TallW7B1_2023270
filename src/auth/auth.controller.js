@@ -6,19 +6,13 @@ export const register = async(req, res) => {
 
     try {
         const data = req.body;
-        
-        let profilePicture = req.file ? req.file.filename : null;
         const encryptedPassword = await hash (data.password);
         
         const user = await Usuario.create({
             name: data.name,
-            surname: data.surname,
             username: data.username,
             email: data.email,
-            phone: data.phone,
             password: encryptedPassword,
-            role: data.role,
-            profilePicture
         })
 
         return res.status(201).json({
@@ -54,7 +48,7 @@ export const login = async(req, res) => {
             });
         }   
 
-        if(!user.estado){
+        if(!user.status){
             return  res.status(400).json({
                 msg: 'El usuario no existe en la base de datos'
             });
@@ -73,8 +67,7 @@ export const login = async(req, res) => {
             msg: 'Login OK',
             userDetails:{
                 username: user.username,
-                token: token,
-                profilePicture: user.profilePicture
+                token: token
             }
         })
 

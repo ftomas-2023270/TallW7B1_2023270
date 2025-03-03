@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "a2cf1492-617a-44d4-bf0c-b27cafe9de75",
+		"name": "user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37413957"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\":\"Fernando Tomas\",\n  \"username\":\"ftomas\",\n  \"email\":\"ftomas@gmail.com\",\n  \"password\":\"VidaRockstar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3006/interferMS/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\":\"ftomas\",\n  \"password\":\"VidaRockstar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3006/interferMS/v1/auth/login"
+			},
+			"response": []
+		}
+	]
+}
