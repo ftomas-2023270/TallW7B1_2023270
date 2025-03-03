@@ -8,6 +8,7 @@ import {dbConnection} from './mongo.js';
 import limiter from '../src/middleware/valid-num-reqs.js';
 import authRoutes from '../src/auth/auth.routes.js';
 import clientRoutes from '../src/client/client.routes.js';
+import compRoutes from '../src/company/comp.routes.js';
 
 
 const middlewares = (app)=>{
@@ -21,7 +22,8 @@ const middlewares = (app)=>{
 
 const routes = (app) =>{
     app.use('/interferMS/v1/auth', authRoutes),
-    app.use('/interferMS/v1/client', clientRoutes)
+    app.use('/interferMS/v1/client', clientRoutes),
+    app.use('/interferMS/v1/comp', compRoutes)
 }
 
 const conectarDB = async()=>{
