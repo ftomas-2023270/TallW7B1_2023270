@@ -6,14 +6,42 @@ import Comp from './comp.model.js';
 
 export const getComps = async (req = request, res = response) =>{
     try {
-        const {limite = 10, desde = 0} = req.query;
-        const query = {status : true};
+        const {limite = 10, desde = 0, order = 'aZ', category, time } = req.query;
+
+        const query = { status: true };
+
+        // Si se proporciona un filtro de categoría, se añade al query
+        if (category) {
+            query.category = category;
+        }
+        if (time) {
+            // Convertir el parámetro `time` a un número
+            const timeYears = Number(time);
+
+            // Si `time` no es un número válido, devolvemos un error
+            if (isNaN(timeYears)) {
+                return res.status(400).json({
+                    success: false,
+                    msg: 'Invalid time parameter, must be a valid number of years',
+                });
+            }
+            query.time = timeYears
+        }
+
+
+        let sortOrder = {};
+        if (order === 'zA') {
+            sortOrder.name = -1;  // De Z a A (orden descendente)
+        } else if(order === 'aZ') {
+            sortOrder.name = 1;   // De A a Z (orden ascendente)
+        }
 
         const [total, comps] = await Promise.all([
             Comp.countDocuments(query),
             Comp.find(query)
                 .skip(Number(desde))
                 .limit(Number(limite))
+                .sort(sortOrder)
         ])
 
         res.status(200).json({

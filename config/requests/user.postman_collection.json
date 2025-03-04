@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a2cf1492-617a-44d4-bf0c-b27cafe9de75",
+		"_postman_id": "36a05305-2f68-4bad-8a51-ea6322817060",
 		"name": "user",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "37413957"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37589631"
 	},
 	"item": [
 		{
@@ -20,7 +20,20 @@
 						}
 					}
 				},
-				"url": "http://localhost:3006/interferMS/v1/auth/register"
+				"url": {
+					"raw": "http://localhost:3006/interferMS/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"interferMS",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
 			},
 			"response": []
 		},
@@ -31,14 +44,27 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"username\":\"ftomas\",\n  \"password\":\"VidaRockstar\"\n}",
+					"raw": "{\n    \"email\": \"admin@coperex.org.gt\",\n    \"username\":\"Admin1\",\n    \"password\":\"VidaRockstar\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:3006/interferMS/v1/auth/login"
+				"url": {
+					"raw": "http://localhost:3007/interferMS/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"interferMS",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
 			},
 			"response": []
 		}

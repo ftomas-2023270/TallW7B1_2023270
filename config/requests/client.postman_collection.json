@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "35f90009-429b-4851-a9cf-ce9a9952c05f",
+		"_postman_id": "43436ab6-8a6c-42b3-890d-42f3d10d1cf3",
 		"name": "client",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "37413957"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37589631"
 	},
 	"item": [
 		{
@@ -13,19 +13,31 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": ""
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3MDE3MmNlNzg0ZmVjODgwMjY1MTgiLCJpYXQiOjE3NDEwOTUyODksImV4cCI6MTc0MTA5ODg4OX0.wwKHcNGrADRibX837puPpKjD8avF1BbZ1SvHHzzxPHM"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"name\":\"Jorge Rivera\",\n  \"email\":\"jorgeRiv@gmail.com\",\n  \"phone\":\"14253698\"\n}",
+					"raw": "{\n  \"name\":\"Leonel Messi\",\n  \"email\":\"theGOAT@gmail.com\",\n  \"phone\":\"10101010\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:3006/interferMS/v1/client"
+				"url": {
+					"raw": "http://localhost:3006/interferMS/v1/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"interferMS",
+						"v1",
+						"client"
+					]
+				}
 			},
 			"response": []
 		},
@@ -36,19 +48,32 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YmM1M2FhODBiZTIwNmQyNGYwZTIiLCJpYXQiOjE3NDEwMTIxOTUsImV4cCI6MTc0MTAxNTc5NX0.GGFSo_dimHLuPiF3HK0xPEVEfZ11bVnkOb2PpWZ5c0o"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3MDE3MmNlNzg0ZmVjODgwMjY1MTgiLCJpYXQiOjE3NDEwOTUyODksImV4cCI6MTc0MTA5ODg4OX0.wwKHcNGrADRibX837puPpKjD8avF1BbZ1SvHHzzxPHM"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"phone\":\"11112222\"\n}",
+					"raw": "{\n  \"phone\":\"22221111\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:3006/interferMS/v1/client/67c5c22bc630deeb430084bd"
+				"url": {
+					"raw": "http://localhost:3006/interferMS/v1/client/67c7018ece784fec8802651f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"interferMS",
+						"v1",
+						"client",
+						"67c7018ece784fec8802651f"
+					]
+				}
 			},
 			"response": []
 		},
@@ -57,7 +82,19 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3006/interferMS/v1/client"
+				"url": {
+					"raw": "http://localhost:3006/interferMS/v1/client",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"interferMS",
+						"v1",
+						"client"
+					]
+				}
 			},
 			"response": []
 		},
@@ -66,7 +103,20 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"url": "http://localhost:3006/interferMS/v1/client/67c5c211c630deeb430084ba"
+				"url": {
+					"raw": "http://localhost:3006/interferMS/v1/client/67c5c211c630deeb430084ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"interferMS",
+						"v1",
+						"client",
+						"67c5c211c630deeb430084ba"
+					]
+				}
 			},
 			"response": []
 		},
@@ -77,10 +127,23 @@
 				"header": [
 					{
 						"key": "x-token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YmM1M2FhODBiZTIwNmQyNGYwZTIiLCJpYXQiOjE3NDEwMTIxOTUsImV4cCI6MTc0MTAxNTc5NX0.GGFSo_dimHLuPiF3HK0xPEVEfZ11bVnkOb2PpWZ5c0o"
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M3MDY4ODljOWNkZGI4MDBhMDk5MDQiLCJpYXQiOjE3NDEwOTk5NTMsImV4cCI6MTc0MTEwMzU1M30.gnzdsl_HVGl6AGtMXGqhyFboxc4VeLUviMEhZyw0G08"
 					}
 				],
-				"url": "http://localhost:3006/interferMS/v1/client/doc"
+				"url": {
+					"raw": "http://localhost:3007/interferMS/v1/client/doc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3007",
+					"path": [
+						"interferMS",
+						"v1",
+						"client",
+						"doc"
+					]
+				}
 			},
 			"response": []
 		},
@@ -94,7 +157,20 @@
 						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YmM1M2FhODBiZTIwNmQyNGYwZTIiLCJpYXQiOjE3NDEwMTIxOTUsImV4cCI6MTc0MTAxNTc5NX0.GGFSo_dimHLuPiF3HK0xPEVEfZ11bVnkOb2PpWZ5c0o"
 					}
 				],
-				"url": "http://localhost:3006/interferMS/v1/client/67c5c211c630deeb430084ba"
+				"url": {
+					"raw": "http://localhost:3006/interferMS/v1/client/67c5c211c630deeb430084ba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3006",
+					"path": [
+						"interferMS",
+						"v1",
+						"client",
+						"67c5c211c630deeb430084ba"
+					]
+				}
 			},
 			"response": []
 		}

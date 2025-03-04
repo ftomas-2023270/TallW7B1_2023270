@@ -2,25 +2,25 @@ import { hash, verify } from 'argon2';
 import Usuario from '../users/user.model.js';
 import  {generarJWT} from '../helper/generate-jwt.js';
 
-export const register = async(req, res) => {
+export const initUser = async(req, res) => {
 
     try {
-        const data = req.body;
-        const encryptedPassword = await hash (data.password);
+        const data = {
+            name: process.env.NAME,
+            username: process.env.USER,
+            email: process.env.EMAIL,
+            password: process.env.PASSWORD,
+        }
         
-        const user = await Usuario.create({
-            name: data.name,
-            username: data.username,
-            email: data.email,
-            password: encryptedPassword,
-        })
+        if((await Usuario.findOne({email:process.env.EMAIL }))){
+            return console.log('User already exist')
+        } 
+        data.password= await hash(data.password)
 
-        return res.status(201).json({
-            message: "User registred succesfully",
-            userDetails:{
-                user: user.email
-            }
-        })
+        const user= new Usuario(data);
+
+        await user.save()
+
     } catch (error) {
         console.log(error);
 
@@ -42,9 +42,10 @@ export const login = async(req, res) => {
         const user = await Usuario.findOne({
             $or: [{email: lowerEmail}, {username: lowerUsername}]
         });
+        
         if(!user){
             return res.status(400).json({
-                msg: 'Credenciales incorrectas, el correo no esta registrado'
+                msg: 'Credenciales incorrectas'
             });
         }   
 

@@ -1,6 +1,7 @@
 'use strict';
 
 import mongoose from "mongoose";
+import { initUser } from "../src/auth/auth.controller.js";
 
 export const dbConnection = async() =>{
     try{
@@ -27,6 +28,7 @@ export const dbConnection = async() =>{
             serverSelectionTimeoutMS: 5000,
             maxPoolSize:50
         } );
+        await initUser();
     }  catch(error){
         console.log('Database connection failes', error);
     } 
